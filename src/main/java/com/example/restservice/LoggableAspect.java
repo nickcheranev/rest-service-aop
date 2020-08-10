@@ -33,7 +33,7 @@ public class LoggableAspect {
             logger.info("Результат: {}", result);
             return result;
         } catch (Throwable throwable) {
-            throwable.printStackTrace();
+            logger.error(throwable.getMessage(), throwable);
             return null;
         }
     }
